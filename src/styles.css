@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+*{
+    margin: auto;
+  /*  text-align: center; */
+    font-family: "Raleway";
+}
+
+/* LAYOUT CLASSES */
+
+.main-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    text-align: left;
+    width: 100%;
+}
+
+.header-container{
+    min-width: 15vw;
+    min-height: 100vh;
+    background-color: #dfdfdf;
+    color: #fff;
+}
+
+.app-container{
+    width: 85vw;
+    min-height: 100vh;
+}
+
+.horizontal-bar{
+    background-color: #166dab;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+}
+
+/* .body-container{
+
+} */
+
+/* GENERAL CLASSES / STYLES */
+
+#heading-main{
+    margin: 0;
+    padding-left: 35px;
+    font-size: 16px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: px;
+}
+
+.left-width{
+    width: 15vw;
+    display: flex;
+    align-items: center;
+}
+
+.right-width{
+    width: 85vw;
+    display: flex;
+    align-items: center;
+}
+
+.inner-padding{
+    padding: 35px;
+}   
+
+ul{
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.search-bar{
+    height: 10px;
+    min-width: 350px;
+    border: 1px solid #2c8bcf;
+    border-radius: 30px;
+    padding: 10px 20px;
+    /* border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden; */
+}
+
+.search-bar:focus {
+    outline: none;
+  }
+
+.menu-list{
+    padding-top: 35px;
+}
+
+.menu-list li{
+    padding: 10px 0px;
+    min-width: 15vw;
+}
+
+.menu-list li:hover{
+    cursor: pointer;
+    background-color: #166dab;
+    transition: 400ms ease;
+}
+
+.menu-list li:hover a{
+    cursor: pointer;
+    color: #fff;
+    transition: 400ms ease;
+}
+
+.menu-list li a{
+    color: #000;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: block;
+    min-width: 100%;
+    padding-left: 35px;
+}
+
+.div-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.task-card{
+    background-color: #dfdfdf;
+    padding: 16px;
+    width: 90%;
+    display: flex;
+    position: relative;
+    min-height: 50px;
+}
+
+.text-field{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    text-align: left;
+}
+
+.text-field input{
+    background-color: #dfdfdf;
+    padding: 16px;
+    border: 0;
+    min-width: 300px;
+    border-radius: 30px;
+}
+
+.add-btn{
+    background-color: #2c8bcf;
+    min-width: 80px;
+    height: 40px;
+    color: #fff;
+    font-size: 15px;
+    border: 2px solid #fff;
+    border-radius: 30px;
+}
+
+.card-btn{
+    background-color: #2c8bcf;
+    min-width: 120px;
+    height: 30px;
+    color: #fff;
+    font-size: 14px;
+    border: 0px solid #fff;
+    margin: 5px;
+}
+
+.icon-custom{
+    width: 40px;
+}
+
+.buttons-card{
+    position: absolute;
+    top: 5px;
+    right: 0;
+}
+
+.search-result-div{
+    width: 380px;
+    background: #fff;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50px;
+    left: 43.5%;
+    padding: 10px 20px;
+    z-index: 10;
+}
