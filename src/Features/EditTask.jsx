@@ -13,26 +13,33 @@ const EditTask = () => {
     const navigate = useNavigate()
     const existingTask = tasks.filter(todo => todo.id === params.id)
     console.log(existingTask)
-    const { name, text } = existingTask[0]
+    const { name, text, note } = existingTask[0]
 
     const [values, setValues] = useState({
        name,
-       text
+       text,
+       note
     })
 
     const handleEdit = () => {
-        setValues({ name: "", text: ""})
+        setValues({ name: "", text: "", note: ""})
         console.log(values)
         dispatch(editTask({
             id: params.id,
             name: values.name,
-            text: values.text
+            text: values.text,
+            note: values.note
         }))
         navigate("/")
     }
 
     return(
         <div className="container">
+            <input
+                type="text"
+                value={values.note}
+                onChange={(e) => setValues({...values, note: e.target.value})}
+            />
             <TextField 
                 label="Název"
                 value={values.name}

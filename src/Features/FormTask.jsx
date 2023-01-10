@@ -13,22 +13,41 @@ const FormTask = () => {
 
     const [values, setValues] = useState({
         name: "",
-        text: ""
+        text: "",
+        note: ""
     })
 
+    const [optionValue, setOptionValue] = useState("")
+
+    // const handleInput = (e) => {
+    //     setOptionValue(e.target.value)
+    //     console.log(optionValue)
+    //     dispatch(addTask({
+    //         input: note,
+    //     }))
+    // }
+
     const handleSubmit = () => {
-        setValues({ name: "", text: ""})
+        setValues({ name: "", text: "", note: ""})
         dispatch(addTask({
             //id:Math.floor(Math.random() * 1000),
             id: uuidv4(),
             name: values.name,
-            text: values.text
+            text: values.text,
+            note: values.note
         }))
         navigate("/")
     }
 
     return(
         <div className="container">
+            <label>Kategorie</label>
+            <input
+                type="text"
+                value={values.note}
+                onChange={(e) => setValues({...values, note: e.target.value})}
+            />
+
             <TextField 
                 label="Název"
                 value={values.name}

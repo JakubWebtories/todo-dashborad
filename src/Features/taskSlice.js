@@ -10,11 +10,12 @@ const taskSlice = createSlice({
             state.push(action.payload) 
         },
         editTask: (state, action) => {
-            const { id, name, text } = action.payload
+            const { id, name, text, note } = action.payload
             const existingTask = state.find(todo => todo.id === id)
             if(existingTask) {
                 existingTask.name = name
                 existingTask.text = text
+                existingTask.note = note
             }
         },
         deleteTask: (state, action) => {

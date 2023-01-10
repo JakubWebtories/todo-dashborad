@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 
 *{
-    margin: auto;
+    margin: 0;
   /*  text-align: center; */
     font-family: "Raleway";
 }
@@ -80,13 +80,12 @@ ul{
 
 .search-bar{
     height: 10px;
-    min-width: 350px;
-    border: 1px solid #2c8bcf;
-    border-radius: 30px;
+    width: 350px;
+    border: 2px solid #2c8bcf;
     padding: 10px 20px;
-    /* border-top-style: hidden;
+    border-top-style: hidden;
     border-right-style: hidden;
-    border-left-style: hidden; */
+    border-left-style: hidden;
 }
 
 .search-bar:focus {
@@ -108,12 +107,6 @@ ul{
     transition: 400ms ease;
 }
 
-.menu-list li:hover a{
-    cursor: pointer;
-    color: #fff;
-    transition: 400ms ease;
-}
-
 .menu-list li a{
     color: #000;
     text-decoration: none;
@@ -121,6 +114,12 @@ ul{
     display: block;
     min-width: 100%;
     padding-left: 35px;
+}
+
+.menu-list li:hover a{
+    cursor: pointer;
+    color: #fff;
+    transition: 400ms ease;
 }
 
 .div-column {
@@ -137,6 +136,11 @@ ul{
     min-height: 50px;
 }
 
+.task-card a{
+    color: #166dab;
+    text-decoration: none;
+}
+
 .text-field{
     display: flex;
     flex-direction: column;
@@ -149,17 +153,23 @@ ul{
     padding: 16px;
     border: 0;
     min-width: 300px;
-    border-radius: 30px;
 }
 
 .add-btn{
     background-color: #2c8bcf;
-    min-width: 80px;
+    width: 120px;
     height: 40px;
     color: #fff;
     font-size: 15px;
     border: 2px solid #fff;
-    border-radius: 30px;
+}
+
+.add-btn:hover{
+    cursor: pointer;
+    color: #2c8bcf;
+    background-color: #fff;
+    border: 2px solid #2c8bcf;
+    transition: 400ms ease;
 }
 
 .card-btn{
@@ -168,8 +178,16 @@ ul{
     height: 30px;
     color: #fff;
     font-size: 14px;
-    border: 0px solid #fff;
-    margin: 5px;
+    border: 2px solid #2c8bcf;
+    margin-right: 5px;
+}
+
+.card-btn:hover{
+    cursor: pointer;
+    color: #2c8bcf;
+    background-color: #fff;
+    border: 2px solid #2c8bcf;
+    transition: 400ms ease;
 }
 
 .icon-custom{

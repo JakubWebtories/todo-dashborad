@@ -17,8 +17,8 @@ const Category = () => {
     const filterdTasks = tasks.filter(task => task.name.toLowerCase().includes(search.toLowerCase()))
 
     return(
-        <div>
-            <input type="text" className="search-bar" onChange={handleSearch} />
+        <div className="container">
+            <input type="text" className="search-bar" onChange={handleSearch} placeholder="Vyhledat..." />
             {filterdTasks.map((todo => {
                 return(                
                     <div className="task-card" key={todo.id}>

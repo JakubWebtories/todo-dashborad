@@ -13,6 +13,7 @@ const TaskList = () => {
     const renderCard = () => tasks.map(todo => (
                 <div className="task-card" key={todo.id}>
                     <div className="">
+                        <span>{todo.note}</span>
                         <h4>{todo.name}</h4>
                         <p>{todo.text}</p>
                     </div>

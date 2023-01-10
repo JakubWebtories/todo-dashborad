@@ -6,14 +6,14 @@ const HorizontalBar = () => {
 
     const tasks = useSelector(store => store.tasks)
 
-    const [search, setSearch] = useState("")
+    // const [search, setSearch] = useState("")
 
-    const handleSearch = (e) => {
-        e.preventDefault()
-        setSearch(e.target.value)
-    }
+    // const handleSearch = (e) => {
+    //     e.preventDefault()
+    //     setSearch(e.target.value)
+    // }
 
-    const filterdTasks = tasks.filter(task => task.name.toLowerCase().includes(search.toLowerCase()))
+    // const filterdTasks = tasks.filter(task => task.name.toLowerCase().includes(search.toLowerCase()))
 
     return(
         <section className="horizontal-bar">
@@ -21,7 +21,7 @@ const HorizontalBar = () => {
                 <h1 id="heading-main">Dashboard</h1>
             </div>
             <div className="right-width">
-                <input type="text" className="search-bar" onChange={handleSearch} />
+                {/* <input type="text" className="search-bar" onChange={handleSearch} /> */}
                 {/* <div className="search-result-div" >
                     {filterdTasks.map((task => {
                         return(
