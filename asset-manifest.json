@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/todo-dashborad/static/css/main.5ef91087.css",
-    "main.js": "/todo-dashborad/static/js/main.fbdf5473.js",
-    "index.html": "/todo-dashborad/index.html",
-    "main.5ef91087.css.map": "/todo-dashborad/static/css/main.5ef91087.css.map",
-    "main.fbdf5473.js.map": "/todo-dashborad/static/js/main.fbdf5473.js.map"
+    "main.css": "./static/css/main.5ef91087.css",
+    "main.js": "./static/js/main.fbdf5473.js",
+    "index.html": "./index.html",
+    "main.5ef91087.css.map": "./static/css/main.5ef91087.css.map",
+    "main.fbdf5473.js.map": "./static/js/main.fbdf5473.js.map"
   },
   "entrypoints": [
     "static/css/main.5ef91087.css",
