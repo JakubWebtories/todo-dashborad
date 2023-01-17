@@ -1,45 +1,45 @@
-import { useState } from "react"
-import TextField from "../Components/TextField"
-import { useNavigate, useParams } from "react-router-dom"
-import { useDispatch, useSelector } from "react-redux"
-import { editTask } from "./taskSlice"
+import { useState } from "react";
+import TextField from "../Components/TextField";
+import { useNavigate, useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { editTask } from "./taskSlice";
+import { IoMdDoneAll } from "react-icons/io";
 
 const EditTask = () => {
 
     const params = useParams()
     const dispatch = useDispatch()
-    console.log(params.id)
     const tasks = useSelector(store => store.tasks)
     const navigate = useNavigate()
     const existingTask = tasks.filter(todo => todo.id === params.id)
-    console.log(existingTask)
-    const { name, text, note } = existingTask[0]
+    const { name, text, selectValue } = existingTask[0]
 
     const [values, setValues] = useState({
        name,
        text,
-       note
-    })
+       selectValue
+    })  
 
     const handleEdit = () => {
-        setValues({ name: "", text: "", note: ""})
         console.log(values)
         dispatch(editTask({
             id: params.id,
             name: values.name,
             text: values.text,
-            note: values.note
+            selectValue: values.selectValue
         }))
         navigate("/")
     }
 
     return(
         <div className="container">
-            <input
-                type="text"
-                value={values.note}
-                onChange={(e) => setValues({...values, note: e.target.value})}
-            />
+            <select className="select-options-category" onChange={(e) => setValues({...values, selectValue: e.target.value})}>
+                <option className="current-option" value={values.selectValue}>Saoučasná katgorie: {values.selectValue}</option>
+                <option value="Práce">Práce</option>
+                <option value="Volný čas">Volný čas</option>
+                <option value="Vzdělávání">Vzdělávání</option>
+                <option value="Vzdělávání">Jiné</option>
+            </select>
             <TextField 
                 label="Název"
                 value={values.name}
@@ -52,7 +52,7 @@ const EditTask = () => {
                 onChange={(e) => setValues({...values, text: e.target.value})}
                 inputProps={ {type: "text", placeholder: "Zadejte úkol..."} }
             />
-            <button className="add-btn" onClick={handleEdit}>Edit</button>
+            <button className="add-btn" onClick={handleEdit}><IoMdDoneAll className="icon-custom" />Uložit</button>
         </div>
     )
 }

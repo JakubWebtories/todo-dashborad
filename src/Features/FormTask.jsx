@@ -14,27 +14,16 @@ const FormTask = () => {
     const [values, setValues] = useState({
         name: "",
         text: "",
-        note: ""
+        selectValue: ""
     })
 
-    const [optionValue, setOptionValue] = useState("")
-
-    // const handleInput = (e) => {
-    //     setOptionValue(e.target.value)
-    //     console.log(optionValue)
-    //     dispatch(addTask({
-    //         input: note,
-    //     }))
-    // }
-
     const handleSubmit = () => {
-        setValues({ name: "", text: "", note: ""})
+        setValues({ name: "", text: "", selectValue: ""})
         dispatch(addTask({
-            //id:Math.floor(Math.random() * 1000),
             id: uuidv4(),
             name: values.name,
             text: values.text,
-            note: values.note
+            selectValue: values.selectValue
         }))
         navigate("/")
     }
@@ -42,12 +31,13 @@ const FormTask = () => {
     return(
         <div className="container">
             <label>Kategorie</label>
-            <input
-                type="text"
-                value={values.note}
-                onChange={(e) => setValues({...values, note: e.target.value})}
-            />
-
+            <select className="select-options-category" onChange={(e) => setValues({...values, selectValue: e.target.value})}>
+                <option value="">Vyberte kategorii...</option>
+                <option value="Práce">Práce</option>
+                <option value="Volný čas">Volný čas</option>
+                <option value="Vzdělávání">Vzdělávání</option>
+                <option value="Vzdělávání">Jiné</option>
+            </select>
             <TextField 
                 label="Název"
                 value={values.name}
@@ -61,7 +51,7 @@ const FormTask = () => {
                 onChange={(e) => setValues({...values, text: e.target.value})}
                 inputProps={ {type: "text", placeholder: "Zadejte úkol..."} }
             />
-            <button className="add-btn" onClick={handleSubmit}><BsPlusCircle/>Přidat</button>
+            <button className="add-btn" onClick={handleSubmit}><BsPlusCircle className="icon-custom"/>Přidat</button>
         </div>
     )
 }

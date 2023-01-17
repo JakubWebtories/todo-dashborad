@@ -13,6 +13,7 @@ const TaskList = () => {
     const renderCard = () => tasks.map(todo => (
                 <div className="task-card" key={todo.id}>
                     <div className="">
+                        <div>{todo.selectValue}</div>
                         <span>{todo.note}</span>
                         <h4>{todo.name}</h4>
                         <p>{todo.text}</p>
@@ -32,7 +33,7 @@ const TaskList = () => {
     return(
         <div className="container">
             <h2>Seznam úkolů</h2>
-            <Link to={`/add-task`}>
+            <Link to={`/add-task`} className="add-task">
                 <button className="card-btn"><BsPlusCircle className="icon-custom"/>Přidat úkol</button>
             </Link>
             {tasks.length ? renderCard() : <p className="span-style">Žádné úkoly</p>}
